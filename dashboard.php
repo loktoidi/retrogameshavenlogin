@@ -10,13 +10,13 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <div class="container">
    
-    <h2>Dashboard </h2>
+    <h2>Retrogamershaven </h2>
     
-    <h3> Welcome <?php echo $userdata['astunnus']; ?> ! </h3>
-    <p> Registred at <?php echo $userdata['created_at']; ?> ! </p>
+    <h3> Tervetuloa <?php echo $userdata['astunnus']; ?> Retrogamershaven odottaa! </h3>
+    <p> Rekisteröintipvm <?php echo $userdata['created_at']; ?> ! </p>
     <h6> <a href="logout.php"> Logout </a> </h6>
     </div>
 </html>
 <?php } else {
-    echo "You are not loged in";
+    echo "Kirjaudu sisään";
 } ?>

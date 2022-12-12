@@ -16,7 +16,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $checking = mysqli_query($link,"SELECT * FROM asiakas WHERE astunnus='$astunnus'");
     $checkcount = mysqli_num_rows($checking);
     if($checkcount!=0){
-        echo "Username Already exists, Please try another one";
+        echo "Astunnus varattu, valitse uusi astunnus";
     }
     else
     {
