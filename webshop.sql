@@ -4,7 +4,7 @@ CREATE DATABASE retrogamershavenlogin;
 
 USE retrogamershavenlogin;
 
-/* ASIAKAS */
+/* ASIAKAS TAULU */
 
 CREATE TABLE asiakas (
 astunnus VARCHAR(18),
