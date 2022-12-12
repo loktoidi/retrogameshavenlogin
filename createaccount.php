@@ -9,10 +9,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $email = $_POST["email"];
     $salasana = $_POST["salasana"];
 
-    // hashing the salasana
+    // sotketaan salasana
     $salasana = md5($salasana );
 
-    //checking astunnus$astunnus already exists
+    //tarkistetaan astunnuksen uniikkius
     $checking = mysqli_query($link,"SELECT * FROM asiakas WHERE astunnus='$astunnus'");
     $checkcount = mysqli_num_rows($checking);
     if($checkcount!=0){
@@ -22,11 +22,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     {
       
         mysqli_query($link,"INSERT INTO `asiakas` (`astunnus`, `etunimi`, `sukunimi`, `email`, `salasana`) VALUES ('$astunnus', '$fname', '$sname', '$email', '$salasana')");
-         // getting user id 
+         // luodaan ID 
         $userid =  mysqli_insert_id($link);
       
-         //creating session 
-         $_SESSION["userid"] = $userid;
+        $_SESSION["userid"] = $userid;
         header("location:dashboard.php");
     }
 }

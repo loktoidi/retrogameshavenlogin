@@ -4,17 +4,17 @@ require_once "config.php";
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     $astunnus = $_POST["astunnus"];
     $salasana = $_POST["salasana"];
-    // hashing the password
+    // salasanan sotkeminen
     $salasana = md5($salasana );
-    //checking username already exists
+    //Tarkistetaan asnimi
     if($astunnus!=NULL){
        $checking =   mysqli_query($link,"SELECT * FROM asiakas WHERE `astunnus`='$astunnus' AND `salasana`='$salasana'");
-         // getting user id 
+         // luodaan ID 
          $userdata = mysqli_fetch_array($checking);
          $userid =  $userdata['id'];
          if($userid!=NULL)
         {
-             //creating session 
+             //luodaan istunto
             $_SESSION["userid"] = $userid;
             
             header("location:dashboard.php");
