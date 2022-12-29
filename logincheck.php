@@ -5,7 +5,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $astunnus = $_POST["astunnus"];
     $salasana = $_POST["salasana"];
     // salasanan sotkeminen
-    $salasana = md5($salasana );
+    $salasana = SHA1($salasana );
     //Tarkistetaan asnimi
     if($astunnus!=NULL){
        $checking =   mysqli_query($link,"SELECT * FROM asiakas WHERE `astunnus`='$astunnus' AND `salasana`='$salasana'");
