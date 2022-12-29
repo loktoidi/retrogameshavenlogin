@@ -10,7 +10,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $salasana = $_POST["salasana"];
 
     // sotketaan salasana
-    $salasana = md5($salasana );
+    $salasana = SHA1($salasana );
 
     //tarkistetaan astunnuksen uniikkius
     $checking = mysqli_query($link,"SELECT * FROM asiakas WHERE astunnus='$astunnus'");
